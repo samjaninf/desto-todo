@@ -22,11 +22,30 @@
   </button>
 </template>
 
+<template name="socialButtons">
+  <div class="socialButtons text-center" style="padding-left: 0; padding-top: 10px;">
+    <button type="button" class=" js-login-twitter btn-twitter">
+      <i class="fa fa-twitter visible-xs">T</i>
+      <span class="hidden-xs">Twitter</span>
+    </button>
+    <button type="button" class=" js-login-google btn-google">
+      <i class="fa fa-google-plus visible-xs">G</i>
+      <span class="hidden-xs">Google</span>
+    </button>
+    <button type="button" class=" js-login-facebook btn-facebook">
+      <i class="fa fa-facebook visible-xs">F</i>
+      <span class="hidden-xs">Facebook</span>
+    </button>
+  </div>
+</template>
+
 <template name="override-atTextInput">
-  <div class="input {{#if isValidating}}validating{{/if}} {{#if hasError}}error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
-    <input type="{{type}}" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
+  <div
+      class="input {{#if isValidating}}validating{{/if}} {{#if hasError}}error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
+    <input type="{{type}}" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}"
+           autocapitalize="none" autocorrect="off">
     {{#if hasIcon}}
-        <span class="{{iconClass}}"></span>
+      <span class="{{iconClass}}"></span>
     {{/if}}
     {{#if hasError}}
       <span>{{errorText}}</span>
@@ -36,7 +55,7 @@
 
 <template name="override-atTitle">
   <h1 class="title-auth">{{title}}</h1>
-  <p class="subtitle-auth">{{_ 'Signing in allows you to have private lists'}}</p>
+  <p class="subtitle-auth">{{_ 'Signing in allows you to save your favorite restaurants'}}</p>
 </template>
 
 <template name="override-atError">
@@ -57,6 +76,7 @@
         {{> atReCaptcha}}
       {{/if}}
       {{> atPwdFormBtn}}
+      {{> socialButtons}}
       {{#if showForgotPasswordLink}}
         {{> atPwdLink}}
       {{/if}}

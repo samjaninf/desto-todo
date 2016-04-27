@@ -22,6 +22,7 @@ reactive-dict
 reactive-var
 aldeed:template-extension
 percolate:momentum
+sweetalert
 
 # data
 mongo
@@ -69,3 +70,20 @@ stub-collections
 xolvio:cleaner
 dispatch:mocha-phantomjs
 practicalmeteor:mocha@2.1.1-rc.1
+
+
+cfs:standard-packages
+cfs:gridfs
+copleykj:livestamp
+mizzao:bootboxjs
+mdg:camera
+mdg:geolocation
+schiller:twit
+logging
+gabrielengel:konecty-magnific-popup
+accounts-google
+accounts-twitter
+accounts-facebook
+sacha:spin
+flawless:meteor-toastr
+service-configuration

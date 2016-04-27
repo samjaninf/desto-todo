@@ -11,6 +11,10 @@ import '../../ui/pages/app-not-found.js';
 // Import to override accounts templates
 import '../../ui/accounts/accounts-templates.js';
 
+//FlowRouter.route('profile/:_id', {
+//  name: 'App.profile'
+//})
+
 FlowRouter.route('/lists/:_id', {
   name: 'Lists.show',
   action() {

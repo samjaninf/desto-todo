@@ -1,24 +1,25 @@
 import { Accounts } from 'meteor/accounts-base';
 
 
-Accounts.emailTemplates.siteName = 'Meteor Guide Todos Example';
-Accounts.emailTemplates.from = 'Meteor Todos Accounts <accounts@example.com>';
+Accounts.emailTemplates.siteName = 'The Daily Specials Board';
+Accounts.emailTemplates.from = 'The Daily Specials Board <accounts@tdsboard.com>';
 
 Accounts.emailTemplates.resetPassword = {
   subject() {
-    return 'Reset your password on Meteor Todos';
+    return 'Reset your password on The Daily Specials Board';
   },
   text(user, url) {
-    return `Hello!
+    return `Hello ${user}
 
-Click the link below to reset your password on Meteor Todos.
+Click the link below to reset your password on The Daily Specials Board.
 
 ${url}
 
-If you didn't request this email, please ignore it.
+If you did not request this email, please look into changing your 
+password or just ignore it.
 
 Thanks,
-The Meteor Todos team
+The Daily Specials Board team.
 `;
   },
 //   html(user, url) {

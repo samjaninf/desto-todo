@@ -1,7 +1,7 @@
 {
   "lists": {
     "makePrivate": {
-      "notLoggedIn": "Must be logged in to make private lists.",
+      "notLoggedIn": "Must be logged in to add to favorites.",
       "lastPublicList": "Cannot make the last public list private."
     },
     "makePublic": {

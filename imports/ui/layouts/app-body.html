@@ -1,38 +1,17 @@
 <template name="App_body">
   {{#HammerTouchArea gestureMap=templateGestures}}
     <div id="container" class="{{menuOpen}} {{cordova}}">
+      <nav id="navbar navbar-static">
       <section id="menu">
-        {{#if currentUser}}
-          <div class="btns-group-vertical">
-            <a href="#" class="js-user-menu btn-secondary">
-              {{#if userMenuOpen}}
-                <span class="icon-arrow-up"></span>
-                {{else}}
-                <span class="icon-arrow-down"></span>
-              {{/if}}
-
-              {{emailLocalPart}}
-            </a>
-            {{#if userMenuOpen}}
-              <a class="js-logout btn-secondary">{{_ 'Logout'}}</a>
-            {{/if}}
-          </div>
-        {{else}}
-          <div class="btns-group">
-            <a href="{{pathFor 'signin'}}" class="btn-secondary">{{_ 'Sign In'}}</a>
-            <a href="{{pathFor 'join'}}" class="btn-secondary">{{_ 'Join'}}</a>
-          </div>
-        {{/if}}
-
-        <div class="list-todos">
+        <div class="list-todos visible-xs">
           <a class="js-new-list link-list-new">
             <span class="icon-plus"></span>
-            {{_ "New List"}}
+            {{_ "New Restaurant"}}
           </a>
 
           {{#each list in lists}}
             <a href="{{pathFor 'Lists.show' _id=list._id}}" title="{{list.name}}"
-                class="list-todo {{activeListClass list}}">
+               class="list-todo {{activeListClass list}}">
               {{#if list.userId}}
                 <span class="icon-lock"></span>
               {{/if}}
@@ -45,7 +24,32 @@
             </a>
           {{/each}}
         </div>
-      </section>
+        </section>
+
+        {{#if currentUser}}
+          <!--<div class="btns-group-vertical">-->
+          <div class="btn-group pull-right hidden-xs">
+            <a href="#" class="js-user-menu btn-secondary">
+              {{#if userMenuOpen}}
+                <span class="icon-arrow-up"></span>
+              {{else}}
+                <span class="icon-arrow-down"></span>
+              {{/if}}
+
+              {{emailLocalPart}}
+            </a>
+            {{#if userMenuOpen}}
+              <a class="js-logout btn-secondary">{{_ 'Logout'}}</a>
+            {{/if}}
+          </div>
+        {{else}}
+          <!--<div class="btns-group">-->
+          <div class="btn-group pull-right">
+            <a href="{{pathFor 'signin'}}" class="btn-secondary">{{_ 'Sign In'}}</a>
+            <a href="{{pathFor 'join'}}" class="btn-secondary">{{_ 'Join'}}</a>
+          </div>
+        {{/if}}
+      </nav>
 
       {{#unless connected}}
         <div class="notifications">
