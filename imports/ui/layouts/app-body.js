@@ -159,8 +159,8 @@ Template.App_body.events ( {
   'click .appLink'() {
     console.log ( 'Take them to the store to download the app.' )
   },
-  'click .appLinkClose'() {
+  'click .appLinkClose'(event, instance) {
     console.log ( 'close the store link' )
-    instance.state.set ( 'menuOpen', !instance.state.get ( 'appLinkSection' ) );
+    instance.state.set ( 'appButtonHidden', !instance.state.get ( 'appButtonHidden' ) );
   },
 } );
