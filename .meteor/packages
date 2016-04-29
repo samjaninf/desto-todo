@@ -87,3 +87,8 @@ accounts-facebook
 sacha:spin
 flawless:meteor-toastr
 service-configuration
+msavin:mongol
+aldeed:autoform
+msavin:jetsetter
+alethes:pages
+meteorhacks:search-source

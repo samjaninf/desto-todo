@@ -4,7 +4,6 @@
 @import './bootstrap/button-groups.less';
 @import '../stylesheets/bootstrap/responsive-utilities.less';
 
-
 @menu-width: 270px;
 @column: 5.55555%;
 
@@ -35,7 +34,7 @@ body {
 }
 
 #menu {
-  //.position(absolute, 0, 0, 0, 0, @menu-width);
+  .position(absolute, 0, 0, 0, 0, @menu-width);
 }
 
 #content-container {
@@ -75,6 +74,20 @@ body {
   }
 }
 
+.appLinkSection {
+  position: fixed;
+  bottom: 20px;
+  text-align: center;
+
+  .appLink,
+  .appLinkClose {
+    color: @color-empty;
+    text-align: center;
+    background-color: black;
+    //margin: 0 auto;
+  }
+}
+
 // Transparent screen to prevent interactions on content when menu is open
 .content-overlay {
   .position(absolute, 0, 0, 0, 0);
@@ -86,5 +99,7 @@ body {
   }
 
   // Hide overlay on desktop
-  @media screen and (min-width: 40em) { display: none; }
+  @media screen and (min-width: 40em) {
+    display: none;
+  }
 }

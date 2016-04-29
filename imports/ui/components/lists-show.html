@@ -20,7 +20,7 @@
 
           <h1 class="js-edit-list title-page">
             <span class="title-wrapper">{{list.name}}</span>
-            <span class="count-list">{{list.incompleteCount}}</span>
+            <!--<span class="count-list">{{!list.incompleteCount}}</span>-->
           </h1>
 
           <div class="nav-group right">
@@ -66,13 +66,13 @@
           {{> Todos_item (todoArgs todo)}}
         {{else}}
           <div class="wrapper-message">
-            <div class="title-message">{{_ 'No tasks here'}}</div>
-            <div class="subtitle-message">{{_ 'Add new tasks using the field above'}}</div>
+            <div class="title-message">{{_ 'No restaurants here'}}</div>
+            <div class="subtitle-message">{{_ 'Add new restaurants by logging in and clicking the button above'}}</div>
           </div>
         {{/each}}
       {{else}}
           <div class="wrapper-message">
-            <div class="title-message">{{_ 'Loading tasks...'}}</div>
+            <div class="title-message">{{_ 'Loading restaurants...'}}</div>
           </div>
       {{/if}}
     </div>

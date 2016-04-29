@@ -1,0 +1,41 @@
+@import '../stylesheets/utils.less';
+@import '../stylesheets/bootstrap/mixins.less';
+@import '../stylesheets/bootstrap/grid.less';
+@import '../stylesheets/bootstrap/type.less';
+@import '../stylesheets/bootstrap/responsive-utilities.less';
+
+.page.auth {
+  text-align: center;
+
+  //.content-scrollable { background: @color-tertiary; }
+  .content-scrollable {
+    background: linear-gradient(to bottom, #0c0c0c, #919191 100%);
+  }
+
+  .wrapper-profile {
+    padding-top: 4em;
+
+    @media screen and (min-width: 40em) {
+      margin: 0 auto;
+      max-width: 480px;
+      width: 80%;
+    }
+
+    form {
+      .input {
+        margin-bottom: 1px;
+        width: 100%;
+        display: block;
+
+        input {
+          width: 100%;
+          padding: .75rem;
+        }
+      }
+
+      label {
+        display: none;
+      }
+    }
+  }
+}

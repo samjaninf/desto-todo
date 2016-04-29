@@ -38,12 +38,17 @@ Template.App_body.onCreated ( function appBodyOnCreated() {
 
   this.state = new ReactiveDict ();
   this.state.setDefault ( {
-    menuOpen     : false,
-    userMenuOpen : false,
+    menuOpen        : false,
+    userMenuOpen    : false,
+    appButtonHidden : false,
   } );
 } );
 
 Template.App_body.helpers ( {
+  appButtonHidden() {
+    const instance = Template.instance ()
+    return instance.state.get ( 'appButtonHidden' ) && 'buttonHidden'
+  },
   menuOpen() {
     const instance = Template.instance ();
     return instance.state.get ( 'menuOpen' ) && 'menu-open';
@@ -52,16 +57,15 @@ Template.App_body.helpers ( {
     return Meteor.isCordova && 'cordova';
   },
   emailLocalPart() {
-
-    const email = Meteor.user ().emails[ 0 ].address;
-    if(email) {
-      return email.substring ( 0, email.indexOf ( '@' ) );
-    } else if (Meteor.user ().service.twitter) {
-      return Meteor.user ().service.twitter.screenName
-    } else if (Meteor.user ().service.google) {
-      let gmail = Meteor.user ().service.google.email
-      return gmail.substring ( 0, gmail.indexOf ( '@' ) );
-    }
+//    const email = Meteor.user ().emails[ 0 ].address;
+//    if ( email ) {
+//      return email.substring ( 0, email.indexOf ( '@' ) )
+//    }
+//    else {
+    let localPart = Meteor.user ().profile.name.split ( " " )
+//      return Meteor.user ().profile.name
+    return localPart[ 0 ]
+//    }
   },
   userMenuOpen() {
     const instance = Template.instance ();
@@ -132,16 +136,31 @@ Template.App_body.events ( {
   },
 
   'click .js-new-list'() {
-    const listId = insert.call ( ( err ) => {
-      if ( err ) {
-        // At this point, we have already redirected to the new list page, but
-        // for some reason the list didn't get created. This should almost never
-        // happen, but it's good to handle it anyway.
-        FlowRouter.go ( 'App.home' );
-        alert(TAPi18n.__('Could not create list.')); // eslint-disable-line no-alert
-      }
-    } );
-
-    FlowRouter.go ( 'Lists.show', { _id : listId } );
+    if ( ActiveRoute.name ( 'Lists.show' ) ) {
+      // TODO -- test this code path
+      const list = Lists.findOne ( FlowRouter.getParam ( '_id' ) );
+      console.log ( "Open Modal For New Favorite and Auto add current restaurant: " + list )
+    }
+    else {
+      console.log ( "Open Modal For New Favorite" )
+    }
+//    const listId = insert.call ( ( err ) => {
+//      if ( err ) {
+//        // At this point, we have already redirected to the new list page, but
+//        // for some reason the list didn't get created. This should almost never
+//        // happen, but it's good to handle it anyway.
+//        FlowRouter.go ( 'App.home' );
+//        alert ( TAPi18n.__ ( 'Could not create list.' ) ); // eslint-disable-line no-alert
+//      }
+//    } );
+//
+//    FlowRouter.go ( 'Lists.show', { _id : listId } );
+  },
+  'click .appLink'() {
+    console.log ( 'Take them to the store to download the app.' )
+  },
+  'click .appLinkClose'() {
+    console.log ( 'close the store link' )
+    instance.state.set ( 'menuOpen', !instance.state.get ( 'appLinkSection' ) );
   },
 } );
