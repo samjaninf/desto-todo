@@ -53,6 +53,7 @@
         {{/if}}
       {{/momentum}}
 
+      <!--TODO: Add the search stuff here from -->
       <form class="js-todo-new todo-new input-symbol">
         <input type="text" placeholder={{_ 'Find Restaurants'}}>
         <span class="icon-add js-todo-add"></span>
@@ -71,9 +72,9 @@
           </div>
         {{/each}}
       {{else}}
-          <div class="wrapper-message">
-            <div class="title-message">{{_ 'Loading restaurants...'}}</div>
-          </div>
+        <div class="wrapper-message">
+          <div class="title-message">{{_ 'Loading restaurants...'}}</div>
+        </div>
       {{/if}}
     </div>
   </div>
