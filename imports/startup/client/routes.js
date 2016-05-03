@@ -7,6 +7,7 @@ import '../../ui/layouts/app-body.js';
 import '../../ui/pages/root-redirector.js';
 import '../../ui/pages/lists-show-page.js';
 import '../../ui/pages/app-not-found.js';
+import '../../ui/accounts/accounts-profile.js';
 
 // Import to override accounts templates
 import '../../ui/accounts/accounts-templates.js';
@@ -15,8 +16,8 @@ FlowRouter.route ( '/profile', {
   name : 'App.profile',
   action() {
     BlazeLayout.render ( 'App_body', { main : 'Account_profile' } )
-  }
-} )
+  },
+} );
 // TODO: Add more of these for inserting restaurants
 // TODO: Add more of these for editing restaurants
 // TODO: Add another route specifically for viewing details of a restaurant

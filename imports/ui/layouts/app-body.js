@@ -8,7 +8,6 @@ import {Template} from 'meteor/templating';
 import {ActiveRoute} from 'meteor/zimme:active-route';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import {TAPi18n} from 'meteor/tap:i18n';
-import {spinner} from 'meteor/sacha:spin'
 
 import {insert} from '../../api/lists/methods.js';
 

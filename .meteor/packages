@@ -22,7 +22,6 @@ reactive-dict
 reactive-var
 aldeed:template-extension
 percolate:momentum
-sweetalert
 
 # data
 mongo
@@ -84,12 +83,6 @@ gabrielengel:konecty-magnific-popup
 accounts-google
 accounts-twitter
 accounts-facebook
-sacha:spin
-flawless:meteor-toastr
 service-configuration
-msavin:mongol
-aldeed:autoform
-msavin:jetsetter
-alethes:pages
 meteorhacks:search-source
-chriswessels:slideout
+aldeed:autoform
