@@ -1,12 +1,54 @@
 <template name="Account_profile">
   <div class="page profile">
-    <!--<h1>HELLO WORLD!</h1>-->
-    {{! > quickForm collection="Meteor.Users" doc=this id="updateBookForm" type="update"}}
-    {{! > quickForm collect=users doc=Meteor.userId id="updateUserForm" type="method" meteormethod="updateUser"}}
-    {{#autoForm collection=users doc=Meteor.userId type=update id="updateProfile" }}
-      <fieldset>
-        {{> afObjectField name='profile' }}
-      </fieldset>
-    {{/autoForm}}
+    <!--<nav>-->
+      <!--<div class="nav-group">-->
+        <!--<a href="#" class="js-menu nav-item">-->
+          <!--<span class="icon-list-unordered"></span>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</nav>-->
+
+    <div class="content-scrollable">
+      <div class="wrapper-profile">
+        <form class="form-horizontal profileForm" role="form">
+          <fieldset class="form-group">
+            <div class="form-group">
+              <label class="sr-only col-sm-2" for="firstName">First Name</label>
+              <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control" name="firstName" id="firstName" placehoder="First Name"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only col-sm-2" for="lastName">Last Name</label>
+              <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control" name="lastName" id="firstName" placehoder="Last Name"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only col-sm-2" for="firstName">First Name</label>
+              <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control" name="firstName" id="firstName" placehoder="First Name"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only col-sm-2" for="firstName">First Name</label>
+              <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control" name="firstName" id="firstName" placehoder="First Name"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only col-sm-2" for="firstName">First Name</label>
+              <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control" name="firstName" id="firstName" placehoder="First Name"/>
+              </div>
+            </div>
+            <div class="form-group col-sm-offset-2 col-sm-10">
+              <button class="btn btn-success" type="submit">Update</button>
+              <button class="btn btn-error cancelBtn" type="button">Cancel</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </div>
 </template>

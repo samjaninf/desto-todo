@@ -11,7 +11,14 @@ Template.Account_profile.helpers({
   },
 })
 
-SimpleSchema.debug = true
+Template.Account_profile.events({
+  'click .cancleBtn'() {
+    console.log('Cancel button clicked!')
+    FlowRouter.go('App.home')
+  }
+})
+
+// SimpleSchema.debug = true
 
 Schema = {};
 
@@ -37,9 +44,16 @@ Schema.UserProfile = new SimpleSchema({
     allowedValues: ['Male', 'Female'],
     optional: true
   },
-  website: {
+  city: {
     type: String,
-    regEx: SimpleSchema.RegEx.Url,
+    optional: true
+  },
+  state: {
+    type: String,
+    optional: true
+  },
+  zipCode: {
+    type: String,
     optional: true
   },
   country: {

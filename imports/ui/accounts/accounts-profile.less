@@ -1,13 +1,8 @@
 @import '../stylesheets/utils.less';
-@import '../stylesheets/bootstrap/mixins.less';
-@import '../stylesheets/bootstrap/grid.less';
-@import '../stylesheets/bootstrap/type.less';
-@import '../stylesheets/bootstrap/responsive-utilities.less';
 
-.page .profile {
+.page.profile {
   text-align: center;
 
-  //.content-scrollable { background: @color-tertiary; }
   .content-scrollable {
     //background: linear-gradient(to bottom, #0c0c0c, #919191 100%);
     background: @color-empty;
@@ -36,6 +31,21 @@
 
       label {
         display: none;
+      }
+
+      .btn-primary {
+        margin: 1em 5% 0;
+        width: 90%;
+
+        @media screen and (min-width: 40em) {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      .at-pwd-link {
+        margin-top: 1em;
       }
     }
   }
