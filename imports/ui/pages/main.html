@@ -1,0 +1,20 @@
+<template name="App_main">
+  <div class="page main">
+    <div class="content-scrollable list-items">
+      {{#if todosReady}}
+        {{#each todo in todos}}
+          {{> Todos_item (todoArgs todo)}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">{{_ 'No restaurants here'}}</div>
+            <div class="subtitle-message">{{_ 'Add new restaurants by logging in and clicking the button above'}}</div>
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="wrapper-message">
+          <div class="title-message">{{_ 'Loading restaurants...'}}</div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
