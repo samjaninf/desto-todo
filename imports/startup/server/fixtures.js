@@ -55,9 +55,11 @@ Meteor.startup(() => {
 
       list.items.forEach((text) => {
         Todos.insert({
-          listId,
-          text,
+          name: text,
+          // listId,
+          // text,
           createdAt: new Date(timestamp),
+          modifiedAt: new Date(timestamp)
         });
 
         timestamp += 1; // ensure unique timestamp.

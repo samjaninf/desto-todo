@@ -69,38 +69,16 @@ Template.Lists_show.onCreated ( function listShowOnCreated() {
     const list    = this.data.list ();
     const message = `${TAPi18n.__ ( 'Are you sure you want to delete the list' )} ${list.name}?`;
 
-    swal ( {
-      title              : "Are you sure?",
-      text               : "Noooooooooooooooo! Why have you forsaken me? :(",
-      type               : "warning",
-      showCancelButton   : true,
-      confirmButtonColor : "#DD6B55",
-      confirmButtonText  : "Yes, remove it!",
-      cancelButtonText   : "No, cancel plx!",
-      closeOnConfirm     : false,
-      closeOnCancel      : false
-    }, function ( isConfirm ) {
-      if ( isConfirm ) {
-        remove.call ( {
-          listId : list._id,
-        }, displayError );
-        swal ( "Remove!", "I only wish for you the best.", "error" );
-        FlowRouter.go ( 'App.home' );
-        return true;
-      }
-      else { swal ( "Cancelled", "Yay! I knew you wouldn't leave me hanging :)", "success" ); return false }
-    } );
+   if ( confirm ( message ) ) { // eslint-disable-line no-alert
+     remove.call ( {
+       listId : list._id,
+     }, displayError );
 
-//    if ( confirm ( message ) ) { // eslint-disable-line no-alert
-//      remove.call ( {
-//        listId : list._id,
-//      }, displayError );
-//
-//      FlowRouter.go ( 'App.home' );
-//      return true;
-//    }
-//
-//    return false;
+     FlowRouter.go ( 'App.home' );
+     return true;
+   }
+
+   return false;
   };
 
   this.toggleListPrivacy = () => {

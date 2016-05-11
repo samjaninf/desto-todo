@@ -1,6 +1,7 @@
 <template name="App_main">
   <div class="page main">
     <div class="content-scrollable list-items">
+      <h1 style="background: white;">HEYO</h1>
       {{#if todosReady}}
         {{#each todo in todos}}
           {{> Todos_item (todoArgs todo)}}
